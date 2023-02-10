@@ -2,6 +2,7 @@
   <div class="the_typography">
     <div
       :class="[
+        `font-family-${type}`,
         `font-size-${textSize}`,
         `font-size-display-${displaySize}`,
         `font-weight-${weight}`,
@@ -28,6 +29,10 @@ export default {
       type: String,
       default: "regular",
     },
+    type: {
+      type: String,
+      default: "primary",
+    },
     text: {
       type: String,
       default: "Texto padrão",
@@ -37,9 +42,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-.the_typography {
-  font-family: "Public Sans";
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.font-family {
+  &-primary {
+    font-family: "Public Sans", sans-serif;
+  }
+
+  &-secondary {
+    font-family: "Bitter", serif;
+  }
 }
 
 .font-size {

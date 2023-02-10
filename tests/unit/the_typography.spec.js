@@ -41,4 +41,18 @@ describe("TheTypography.vue", () => {
     });
     expect(wrapper.props().weight).toBe(weight);
   });
+
+  it("renders the correct font family", () => {
+    const type = "secondary";
+    const wrapper = shallowMount(TheTypography, {
+      propsData: {
+        type: type,
+      },
+    });
+
+    const childElement = wrapper.find(`.font-family-${type}`);
+    const classes = childElement.classes();
+
+    expect(classes).toContain(`font-family-${type}`);
+  });
 });
