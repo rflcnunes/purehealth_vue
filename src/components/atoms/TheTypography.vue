@@ -42,74 +42,73 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .font-family {
   &-primary {
-    font-family: "Public Sans", sans-serif;
+    font-family: $font-primary;
   }
 
   &-secondary {
-    font-family: "Bitter", serif;
+    font-family: $font-secondary;
   }
 }
 
 .font-size {
   &-xs {
-    font-size: 12px;
+    font-size: $font-size-xs;
   }
 
   &-sm {
-    font-size: 14px;
+    font-size: $font-size-sm;
   }
 
   &-md {
-    font-size: 16px;
+    font-size: $font-size-md;
   }
 
   &-lg {
-    font-size: 18px;
+    font-size: $font-size-lg;
   }
 
   &-display-xs {
-    font-size: 24px;
+    font-size: $font-size-display-xs;
   }
 
   &-display-sm {
-    font-size: 30px;
+    font-size: $font-size-display-sm;
   }
 
   &-display-md {
-    font-size: 36px;
+    font-size: $font-size-display-md;
   }
 
   &-display-lg {
-    font-size: 48px;
+    font-size: $font-size-display-lg;
   }
 
   &-display-xl {
-    font-size: 60px;
+    font-size: $font-size-display-xl;
   }
 
   &-display-2xl {
-    font-size: 72px;
+    font-size: $font-size-display-2xl;
   }
 }
 
 .font-weight {
   &-regular {
-    font-weight: 500;
+    font-weight: $font-weight-regular;
   }
 
   &-medium {
-    font-weight: 400;
+    font-weight: $font-weight-medium;
   }
 
   &-semibold {
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
   }
 
   &-bold {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
   }
 }
 </style>
