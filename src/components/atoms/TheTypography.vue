@@ -1,11 +1,13 @@
 <template>
   <div class="the_typography">
     <div
+      id="item"
       :class="[
         `font-family-${type}`,
         `font-size-${textSize}`,
         `font-size-display-${displaySize}`,
         `font-weight-${weight}`,
+        `font-${color}`,
       ]"
     >
       {{ text }}
@@ -37,11 +39,19 @@ export default {
       type: String,
       default: "Texto padrão",
     },
+    color: {
+      type: String,
+      default: "",
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+#item {
+  display: flex;
+}
+
 .font-family {
   &-primary {
     font-family: $font-primary;
@@ -109,6 +119,12 @@ export default {
 
   &-bold {
     font-weight: $font-weight-bold;
+  }
+}
+
+.font {
+  &-primary-gray {
+    color: $primary-gray;
   }
 }
 </style>
