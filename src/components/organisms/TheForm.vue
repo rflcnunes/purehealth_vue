@@ -1,27 +1,15 @@
 <template>
-  <div class="the_form">
-    <TheTypography text="Family text tests" displaySize="xs" />
-    <TheTypography type="primary" textSize="lg" />
-    <TheTypography type="secondary" textSize="lg" />
-
-    <TheTypography text="Weight tests" displaySize="xs" />
-    <TheTypography weight="medium" textSize="md" />
-    <TheTypography weight="semibold" textSize="md" />
-    <TheTypography weight="bold" textSize="md" />
-
-    <TheTypography text="Size text tests" displaySize="xs" />
-    <TheTypography textSize="xs" />
-    <TheTypography textSize="sm" />
-    <TheTypography textSize="md" />
-    <TheTypography textSize="lg" />
-
-    <TheTypography text="Size display tests" displaySize="xs" />
-    <TheTypography displaySize="xs" />
-    <TheTypography displaySize="sm" />
-    <TheTypography displaySize="md" />
-    <TheTypography displaySize="lg" />
-    <TheTypography displaySize="xl" />
-    <TheTypography displaySize="2xl" />
+  <div
+    class="the_form"
+    :class="{
+      mobile: $mq === 'mobile' || 'tablet',
+      desktop: $mq === 'desktop',
+    }"
+  >
+    <div class="header">
+      <TheTypography text="Welcome Back" displaySize="sm" />
+      <TheTypography text="Hop back in!" textSize="lg" color="primary-gray" />
+    </div>
   </div>
 </template>
 
@@ -40,5 +28,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//
+.the_form {
+  display: grid;
+  grid-auto-flow: column;
+
+  .header {
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: flex-start;
+  }
+}
+
+.mobile {
+  //
+
+  .header {
+    //
+  }
+}
+
+.desktop {
+  //
+
+  .header {
+    //
+  }
+}
 </style>
