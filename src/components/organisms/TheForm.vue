@@ -8,7 +8,12 @@
   >
     <div class="header">
       <TheTypography text="Welcome Back" displaySize="sm" />
-      <TheTypography text="Hop back in!" textSize="lg" color="primary-gray" />
+      <TheTypography
+        class="header_subtitle"
+        text="Hop back in!"
+        textSize="lg"
+        color="primary-gray"
+      />
     </div>
   </div>
 </template>
@@ -36,6 +41,10 @@ export default {
     display: grid;
     grid-auto-flow: row;
     justify-content: flex-start;
+
+    &_subtitle {
+      margin: 8px 0;
+    }
   }
 }
 
