@@ -3,7 +3,7 @@
     <TheTypography id="label" for="input" :text="label" textSize="sm" />
     <input
       id="input"
-      :type="type"
+      :type="inputType"
       :value="value"
       @input="setValue"
       @blur="v$.value.$touch"
@@ -37,6 +37,7 @@ import { required } from "@vuelidate/validators";
 import TheTypography from "./TheTypography.vue";
 
 export default {
+  name: "TheInput",
   setup: () => ({ v$: useVuelidate() }),
   props: {
     errorMessage: {
