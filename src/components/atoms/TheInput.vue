@@ -2,7 +2,7 @@
   <div id="the_input">
     <TheTypography id="label" for="input" :text="label" textSize="sm" />
     <input
-      id="input"
+      class="input"
       :type="inputType"
       :value="value"
       @input="setValue"
@@ -74,6 +74,8 @@ export default {
                 /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
                   v
                 )
+            : this.inputType === "password"
+            ? (v) => !!v && v.length >= 8
             : (v) => !isNaN(v),
       },
     };
@@ -94,13 +96,12 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: start;
-  max-width: 50%;
 
   #label {
     margin: 2px 0;
   }
 
-  #input {
+  .input {
     border-radius: 4px;
     padding: 10px 12px;
     outline: 0;

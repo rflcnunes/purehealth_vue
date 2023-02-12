@@ -15,27 +15,79 @@
         color="primary-gray"
       />
     </div>
+    <div class="form">
+      <TheInput
+        v-model="form.email"
+        label="Email Address"
+        placeholder="email@example.com"
+        errorMessage="Enter a valid email address"
+        successMessage="OK!"
+        inputType="email"
+      />
+      <TheInput
+        v-model="form.username"
+        label="Username"
+        placeholder=" "
+        errorMessage="Enter a valid username"
+        successMessage="OK!"
+        inputType="text"
+      />
+      <TheInput
+        v-model="form.password"
+        label="Password"
+        placeholder="At least 8 characters"
+        errorMessage="Enter a valid password"
+        successMessage="OK!"
+        inputType="password"
+      />
+      <TheInput
+        v-model="form.confirmPassword"
+        label="Confirm Password"
+        placeholder=" "
+        errorMessage="Enter a valid password"
+        successMessage="OK!"
+        inputType="password"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { useVuelidate } from "@vuelidate/core";
+import TheInput from "../atoms/TheInput.vue";
 import TheTypography from "../atoms/TheTypography.vue";
 
 export default {
   name: "TheForm",
+  setup: () => ({ v$: useVuelidate() }),
   data() {
     return {
-      //
+      form: {
+        email: "",
+        username: "",
+        password: "",
+        confirmPassword: "",
+      },
     };
   },
-  components: { TheTypography },
+  components: { TheTypography, TheInput },
+  validations() {
+    return {
+      confirmPassword: {
+        customValidation:
+          this.form.confirmPassword != ""
+            ? (v) => v === this.form.password
+            : (v) => !isNaN(v),
+      },
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .the_form {
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
 
   .header {
     display: grid;
@@ -46,18 +98,27 @@ export default {
       margin: 8px 0;
     }
   }
-}
 
-.mobile {
-  //
-
-  .header {
+  .form {
     //
   }
 }
 
+.mobile {
+  width: 99%;
+
+  .header {
+    //
+  }
+
+  .form {
+    display: grid;
+    grid-gap: 15px;
+  }
+}
+
 .desktop {
-  //
+  width: 40%;
 
   .header {
     //
