@@ -3,7 +3,7 @@
     <TheTypography id="label" for="input" :text="label" textSize="sm" />
     <input
       id="input"
-      type="text"
+      :type="type"
       :value="value"
       @input="setValue"
       @blur="v$.value.$touch"
@@ -55,11 +55,26 @@ export default {
       type: String,
       default: "Placeholder",
     },
+    inputType: {
+      type: String,
+      default: "text",
+    },
   },
   data: () => ({ value: "" }),
   validations() {
     return {
-      value: { required },
+      value: {
+        required,
+        customValidation:
+          this.inputType === "text"
+            ? (v) => !!v && v.length >= 3
+            : this.inputType === "email"
+            ? (v) =>
+                /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+                  v
+                )
+            : (v) => !isNaN(v),
+      },
     };
   },
   methods: {
