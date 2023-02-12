@@ -1,22 +1,27 @@
 <template>
-  <div
-    id="the_checkbox"
-    @click="clickDisabled"
-    :class="{
-      checked: checked && !isDisabled,
-      unchecked: !checked && !isDisabled,
-      disabled: isDisabled,
-    }"
-  >
-    <span v-if="checked" class="material-icons icon">done</span>
+  <div id="checkbox_component">
+    <div
+      id="the_checkbox"
+      @click="clickDisabled"
+      :class="{
+        checked: checked && !isDisabled,
+        unchecked: !checked && !isDisabled,
+        disabled: isDisabled,
+      }"
+    >
+      <span v-if="checked" class="material-icons icon">done</span>
+    </div>
+    <TheTypography class="text" :text="label" textSize="sm" />
   </div>
 </template>
 
 <script>
 import { required } from "vuelidate/lib/validators";
+import TheTypography from "./TheTypography.vue";
 
 export default {
   name: "TheCheckbox",
+  components: { TheTypography },
   props: {
     isRequired: {
       type: Boolean,
@@ -25,6 +30,10 @@ export default {
     isDisabled: {
       type: Boolean,
       default: false,
+    },
+    label: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -61,6 +70,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#checkbox_component {
+  display: grid;
+  grid-template-columns: 0.1fr 3fr;
+  align-items: center;
+  grid-gap: 4px;
+
+  #label {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
 #the_checkbox {
   width: 20px;
   height: 20px;

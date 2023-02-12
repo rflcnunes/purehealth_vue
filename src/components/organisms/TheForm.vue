@@ -48,6 +48,9 @@
         successMessage="OK!"
         inputType="password"
       />
+      <div>
+        <TheCheckbox label="I agree with the terms ad privacy" />
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +59,7 @@
 import { useVuelidate } from "@vuelidate/core";
 import TheInput from "../atoms/TheInput.vue";
 import TheTypography from "../atoms/TheTypography.vue";
+import TheCheckbox from "../atoms/TheCheckbox.vue";
 
 export default {
   name: "TheForm",
@@ -70,7 +74,7 @@ export default {
       },
     };
   },
-  components: { TheTypography, TheInput },
+  components: { TheTypography, TheInput, TheCheckbox },
   validations() {
     return {
       confirmPassword: {
