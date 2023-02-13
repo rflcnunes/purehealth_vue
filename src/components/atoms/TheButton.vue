@@ -4,12 +4,12 @@
     @click="$emit('input', $event)"
     type="submit"
     :class="[
-      primary,
-      secondary,
-      outlined,
-      textBtn,
-      errorBtn,
-      errorLightBtn,
+      type === 'primary' ? 'primary' : '',
+      type === 'secondary' ? 'secondary' : '',
+      type === 'outlined' ? 'outlined' : '',
+      type === 'text' ? 'textBtn' : '',
+      type === 'error' ? 'errorBtn' : '',
+      type === 'errorLight' ? 'errorLightBtn' : '',
       ultraWideBtn,
       `btn-${size}`,
     ]"
@@ -48,6 +48,9 @@ export default {
     size: {
       type: String,
       default: "md",
+    },
+    ultraWideBtn: {
+      type: Boolean,
     },
   },
 };
