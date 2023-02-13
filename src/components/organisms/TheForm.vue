@@ -59,6 +59,11 @@
         </div>
         <div class="line"></div>
       </div>
+      <div class="form_actions_social_media">
+        <TheSocialMediaButton icon="facebook" label="Continue with Facebook" />
+        <TheSocialMediaButton icon="google" label="Continue with Google" />
+        <TheSocialMediaButton icon="apple" label="Continue with Apple" />
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +74,7 @@ import TheInput from "../atoms/TheInput.vue";
 import TheTypography from "../atoms/TheTypography.vue";
 import TheCheckbox from "../atoms/TheCheckbox.vue";
 import TheButton from "../atoms/TheButton.vue";
+import TheSocialMediaButton from "../atoms/TheSocialMediaButton.vue";
 
 export default {
   name: "TheForm",
@@ -83,7 +89,13 @@ export default {
       },
     };
   },
-  components: { TheTypography, TheInput, TheCheckbox, TheButton },
+  components: {
+    TheTypography,
+    TheInput,
+    TheCheckbox,
+    TheButton,
+    TheSocialMediaButton,
+  },
   validations() {
     return {
       confirmPassword: {
@@ -148,6 +160,12 @@ export default {
         justify-content: center;
         color: $blue-gray;
       }
+    }
+
+    &_social_media {
+      width: 100%;
+      display: grid;
+      grid-gap: 8px;
     }
   }
 }
