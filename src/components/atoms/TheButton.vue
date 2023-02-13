@@ -89,11 +89,36 @@ export default {
   &:active {
     border: 1px solid $purple-dark;
     background-color: $purple-dark;
+    box-shadow: none;
   }
 
   &:disabled {
     border: 1px solid $purple-light;
     background-color: $purple-light;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  border: 1px solid $purple-ultra-light;
+  background-color: $purple-ultra-light;
+  color: $purple-dark;
+
+  &:hover {
+    box-shadow: $input-blue-shadow;
+  }
+
+  &:active {
+    border: 1px solid $purple-light;
+    background-color: $purple-light;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    border: 1px solid $purple-ultra-light;
+    background-color: $purple-ultra-light;
+    color: $purple-ultra-light-text;
     box-shadow: none;
     cursor: not-allowed;
   }
