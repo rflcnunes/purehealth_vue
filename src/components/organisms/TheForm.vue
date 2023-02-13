@@ -64,6 +64,10 @@
         <TheSocialMediaButton icon="google" label="Continue with Google" />
         <TheSocialMediaButton icon="apple" label="Continue with Apple" />
       </div>
+      <div class="form_actions_already_have_account">
+        <TheTypography text="Already have an account?" textSize="sm" />
+        <TheButton class="textBtn" size="sm" label="Log In" />
+      </div>
     </div>
   </div>
 </template>
@@ -166,6 +170,12 @@ export default {
       width: 100%;
       display: grid;
       grid-gap: 8px;
+    }
+
+    &_already_have_account {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
