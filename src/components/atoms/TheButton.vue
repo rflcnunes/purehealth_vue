@@ -3,7 +3,7 @@
     class="btn"
     @click="$emit('input', $event)"
     type="submit"
-    :class="{
+    :class="[
       primary,
       secondary,
       outlined,
@@ -12,7 +12,8 @@
       errorBtn,
       darkBtn,
       primaryDark,
-    }"
+      `btn-${size}`,
+    ]"
     :disabled="isDisabled"
   >
     <TheTypography :text="label" textSize="sm" />
@@ -45,14 +46,36 @@ export default {
       type: String,
       default: "default",
     },
+    size: {
+      type: String,
+      default: "md",
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .btn {
-  padding: 8px 15px;
-  border-radius: 6px;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.btn {
+  &-sm {
+    padding: 6px 16px;
+  }
+
+  &-md {
+    padding: 10px 20px;
+  }
+
+  &-lg {
+    padding: 14px 24px;
+  }
+
+  &-xl {
+    padding: 16px 32px;
+  }
 }
 .primary {
   border: 1px solid $purple;
