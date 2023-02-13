@@ -8,8 +8,8 @@
       secondary,
       outlined,
       textBtn,
-      navLink,
       errorBtn,
+      errorLightBtn,
       darkBtn,
       primaryDark,
       `btn-${size}`,
@@ -188,6 +188,30 @@ export default {
     border: 1px solid $input-error-light;
     background-color: $input-error-light;
     box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+.errorLightBtn {
+  border: 1px solid $red-error-light;
+  background-color: $red-error-light;
+  color: $input-error-dark;
+
+  &:hover {
+    box-shadow: $input-blue-shadow;
+  }
+
+  &:active {
+    border: 1px solid $red-active-light;
+    background-color: $red-active-light;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    border: 1px solid $input-error-light;
+    background-color: $input-error-light;
+    box-shadow: none;
+    color: $red-error-light;
     cursor: not-allowed;
   }
 }
