@@ -168,4 +168,27 @@ export default {
     cursor: not-allowed;
   }
 }
+
+.errorBtn {
+  border: 1px solid $input-error;
+  background-color: $input-error;
+  color: white;
+
+  &:hover {
+    box-shadow: $input-blue-shadow;
+  }
+
+  &:active {
+    border: 1px solid $input-error-dark;
+    background-color: $input-error-dark;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    border: 1px solid $input-error-light;
+    background-color: $input-error-light;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
 </style>
