@@ -61,6 +61,7 @@ export default {
   grid-template-columns: 0.2fr auto;
   justify-content: center;
   align-items: center;
+  grid-gap: 8px;
   cursor: pointer;
 
   &:hover {
