@@ -74,7 +74,7 @@ export default {
   display: grid;
   grid-template-columns: 0.1fr 3fr;
   align-items: center;
-  grid-gap: 4px;
+  grid-gap: 8px;
 
   #label {
     display: flex;
