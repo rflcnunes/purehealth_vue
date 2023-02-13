@@ -6,68 +6,82 @@
       desktop: $mq === 'desktop',
     }"
   >
-    <div class="header">
-      <TheTypography text="Welcome Back" displaySize="sm" />
-      <TheTypography
-        class="header_subtitle"
-        text="Hop back in!"
-        textSize="lg"
-        color="primary-gray"
-      />
-    </div>
-    <div class="form">
-      <TheInput
-        v-model="form.email"
-        label="Email Address"
-        placeholder="email@example.com"
-        errorMessage="Enter a valid email address"
-        successMessage="OK!"
-        inputType="email"
-      />
-      <TheInput
-        v-model="form.username"
-        label="Username"
-        placeholder=" "
-        errorMessage="Enter a valid username"
-        successMessage="OK!"
-        inputType="text"
-      />
-      <TheInput
-        v-model="form.password"
-        label="Password"
-        placeholder="At least 8 characters"
-        errorMessage="Enter a valid password"
-        successMessage="OK!"
-        inputType="password"
-      />
-      <TheInput
-        v-model="form.confirmPassword"
-        label="Confirm Password"
-        placeholder=" "
-        errorMessage="Enter a valid password"
-        successMessage="OK!"
-        inputType="password"
-      />
-    </div>
-    <div class="form_actions">
-      <TheCheckbox label="I agree with the terms ad privacy" />
-      <TheButton class="ultraWideBtn primary" size="lg" label="Sign Up" />
-      <div class="form_actions_information">
-        <div class="line"></div>
-        <div class="description">
-          <TheTypography text="Or continue with" textSize="sm" />
+    <div id="content_box">
+      <div class="header">
+        <img
+          v-if="$mq === 'desktop'"
+          id="logo"
+          src="../../assets/formHeaderLogo.svg"
+          alt="header logo"
+        />
+        <TheTypography text="Welcome Back" displaySize="sm" />
+        <TheTypography
+          class="header_subtitle"
+          text="Hop back in!"
+          textSize="lg"
+          color="primary-gray"
+        />
+      </div>
+      <div class="form">
+        <TheInput
+          v-model="form.email"
+          label="Email Address"
+          placeholder="email@example.com"
+          errorMessage="Enter a valid email address"
+          successMessage="OK!"
+          inputType="email"
+        />
+        <TheInput
+          v-model="form.username"
+          label="Username"
+          placeholder=" "
+          errorMessage="Enter a valid username"
+          successMessage="OK!"
+          inputType="text"
+        />
+        <TheInput
+          v-model="form.password"
+          label="Password"
+          placeholder="At least 8 characters"
+          errorMessage="Enter a valid password"
+          successMessage="OK!"
+          inputType="password"
+        />
+        <TheInput
+          v-model="form.confirmPassword"
+          label="Confirm Password"
+          placeholder=" "
+          errorMessage="Enter a valid password"
+          successMessage="OK!"
+          inputType="password"
+        />
+      </div>
+      <div class="form_actions">
+        <TheCheckbox label="I agree with the terms ad privacy" />
+        <TheButton class="ultraWideBtn primary" size="lg" label="Sign Up" />
+        <div class="form_actions_information">
+          <div class="line"></div>
+          <div class="description">
+            <TheTypography text="Or continue with" textSize="sm" />
+          </div>
+          <div class="line"></div>
         </div>
-        <div class="line"></div>
+        <div class="form_actions_social_media">
+          <TheSocialMediaButton
+            icon="facebook"
+            label="Continue with Facebook"
+          />
+          <TheSocialMediaButton icon="google" label="Continue with Google" />
+          <TheSocialMediaButton icon="apple" label="Continue with Apple" />
+        </div>
+        <div class="form_actions_already_have_account">
+          <TheTypography text="Already have an account?" textSize="sm" />
+          <TheButton class="textBtn" size="sm" label="Log In" />
+        </div>
       </div>
-      <div class="form_actions_social_media">
-        <TheSocialMediaButton icon="facebook" label="Continue with Facebook" />
-        <TheSocialMediaButton icon="google" label="Continue with Google" />
-        <TheSocialMediaButton icon="apple" label="Continue with Apple" />
-      </div>
-      <div class="form_actions_already_have_account">
-        <TheTypography text="Already have an account?" textSize="sm" />
-        <TheButton class="textBtn" size="sm" label="Log In" />
-      </div>
+    </div>
+    <div v-if="$mq === 'desktop'" class="body_background">
+      <img src="../../assets/homeBackground.svg" alt="background" />
     </div>
   </div>
 </template>
@@ -127,14 +141,14 @@ export default {
       margin: 8px 0;
     }
   }
-
-  .form {
-    //
-  }
 }
 
 .mobile {
   width: 99%;
+
+  #content_box {
+    padding: 16px 32px;
+  }
 
   .header {
     margin: 0 0 24px 0;
@@ -181,10 +195,18 @@ export default {
 }
 
 .desktop {
-  width: 40%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-  .header {
-    //
+  #content_box {
+    padding: 0 120px;
+
+    .header {
+      #logo {
+        margin: 60px 0 24px 0;
+      }
+    }
   }
 }
 </style>
