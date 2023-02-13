@@ -10,8 +10,6 @@
       textBtn,
       errorBtn,
       errorLightBtn,
-      darkBtn,
-      primaryDark,
       `btn-${size}`,
     ]"
     :disabled="isDisabled"
