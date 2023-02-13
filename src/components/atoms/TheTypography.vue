@@ -79,6 +79,10 @@ export default {
     font-size: $font-size-lg;
   }
 
+  &-xl {
+    font-size: $font-size-xl;
+  }
+
   &-display-xs {
     font-size: $font-size-display-xs;
   }

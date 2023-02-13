@@ -16,7 +16,7 @@
     ]"
     :disabled="isDisabled"
   >
-    <TheTypography :text="label" textSize="sm" />
+    <TheTypography :text="label" :textSize="size" />
   </button>
 </template>
 
@@ -139,6 +139,31 @@ export default {
     border: 1px solid $light-gray;
     background-color: transparent;
     color: $light-gray;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+.textBtn {
+  border: 0;
+  background-color: transparent;
+  color: $purple;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    border: 1px solid $light-gray;
+    background-color: transparent;
+    box-shadow: $input-blue-shadow;
+  }
+
+  &:disabled {
+    border: 0;
+    text-decoration: none;
+    background-color: transparent;
+    color: $purple-light;
     box-shadow: none;
     cursor: not-allowed;
   }
