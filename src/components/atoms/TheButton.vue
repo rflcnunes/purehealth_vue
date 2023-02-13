@@ -123,4 +123,24 @@ export default {
     cursor: not-allowed;
   }
 }
+
+.outlined {
+  border: 1px solid $light-gray;
+  background-color: transparent;
+  color: black;
+
+  &:active {
+    border: 1px solid $light-gray;
+    background-color: transparent;
+    box-shadow: $input-blue-shadow;
+  }
+
+  &:disabled {
+    border: 1px solid $light-gray;
+    background-color: transparent;
+    color: $light-gray;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
 </style>
