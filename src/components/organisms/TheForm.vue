@@ -48,8 +48,16 @@
         successMessage="OK!"
         inputType="password"
       />
-      <div>
-        <TheCheckbox label="I agree with the terms ad privacy" />
+    </div>
+    <div class="form_actions">
+      <TheCheckbox label="I agree with the terms ad privacy" />
+      <TheButton class="ultraWideBtn primary" size="lg" label="Sign Up" />
+      <div class="form_actions_information">
+        <div class="line"></div>
+        <div class="description">
+          <TheTypography text="Or continue with" textSize="sm" />
+        </div>
+        <div class="line"></div>
       </div>
     </div>
   </div>
@@ -60,6 +68,7 @@ import { useVuelidate } from "@vuelidate/core";
 import TheInput from "../atoms/TheInput.vue";
 import TheTypography from "../atoms/TheTypography.vue";
 import TheCheckbox from "../atoms/TheCheckbox.vue";
+import TheButton from "../atoms/TheButton.vue";
 
 export default {
   name: "TheForm",
@@ -74,7 +83,7 @@ export default {
       },
     };
   },
-  components: { TheTypography, TheInput, TheCheckbox },
+  components: { TheTypography, TheInput, TheCheckbox, TheButton },
   validations() {
     return {
       confirmPassword: {
@@ -112,12 +121,34 @@ export default {
   width: 99%;
 
   .header {
-    //
+    margin: 0 0 24px 0;
   }
 
   .form {
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 16px;
+    margin: 0 0 24px 0;
+  }
+
+  .form_actions {
+    display: grid;
+    grid-gap: 24px;
+
+    &_information {
+      display: grid;
+      grid-template-columns: 1fr 0.7fr 1fr;
+      align-items: center;
+      .line {
+        border: 0.5px solid $blue-gray;
+        height: 0;
+      }
+
+      .description {
+        display: flex;
+        justify-content: center;
+        color: $blue-gray;
+      }
+    }
   }
 }
 
