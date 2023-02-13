@@ -10,6 +10,7 @@
       textBtn,
       errorBtn,
       errorLightBtn,
+      ultraWideBtn,
       `btn-${size}`,
     ]"
     :disabled="isDisabled"
@@ -74,6 +75,13 @@ export default {
   &-xl {
     padding: 16px 32px;
   }
+}
+
+.ultraWideBtn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 .primary {
   border: 1px solid $purple;
