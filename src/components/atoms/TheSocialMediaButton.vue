@@ -78,6 +78,7 @@ export default {
   width: 100%;
   align-items: center;
   justify-content: center;
+  color: dark;
 }
 
 .btn {
