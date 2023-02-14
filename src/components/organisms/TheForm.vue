@@ -85,7 +85,11 @@
           />
         </div>
         <div class="form_actions_already_have_account">
-          <TheTypography text="Already have an account?" textSize="sm" />
+          <TheTypography
+            class="textAlreadyHavaAnAccount"
+            text="Already have an account?"
+            textSize="sm"
+          />
           <TheButton class="textBtn" size="sm" label="Log In" />
         </div>
       </div>
@@ -149,6 +153,14 @@ export default {
 
     &_subtitle {
       margin: 8px 0;
+    }
+  }
+
+  .form_actions {
+    .form_actions_already_have_account {
+      .textAlreadyHavaAnAccount {
+        color: $primary-gray;
+      }
     }
   }
 }
