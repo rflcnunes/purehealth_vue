@@ -3,7 +3,7 @@
     class="btn"
     @click="$emit('input', $event)"
     type="submit"
-    :class="[`btn-${size}`]"
+    :class="[`btn-${size}`, ultraWideBtn]"
     :disabled="isDisabled"
   >
     <TheIconSvg size="sm" :icon="icon" />
@@ -47,6 +47,9 @@ export default {
       type: String,
       default: "md",
     },
+    ultraWideBtn: {
+      type: Boolean,
+    },
   },
 };
 </script>
@@ -67,6 +70,13 @@ export default {
   &:hover {
     background-color: $disabled-gray;
   }
+}
+
+.ultraWideBtn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {

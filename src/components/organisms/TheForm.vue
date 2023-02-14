@@ -69,16 +69,17 @@
         </div>
         <div class="form_actions_social_media">
           <TheSocialMediaButton
+            class="ultraWideBtn"
             icon="facebook"
             label="Continue with Facebook"
           />
           <TheSocialMediaButton
-            ultraWideBtn
+            class="ultraWideBtn"
             icon="google"
             label="Continue with Google"
           />
           <TheSocialMediaButton
-            ultraWideBtn
+            class="ultraWideBtn"
             icon="apple"
             label="Continue with Apple"
           />
