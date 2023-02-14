@@ -2,7 +2,8 @@
   <div
     class="the_form"
     :class="{
-      mobile: $mq === 'mobile' || 'tablet',
+      mobile: $mq === 'mobile',
+      tablet: $mq === 'tablet',
       desktop: $mq === 'desktop',
     }"
   >
@@ -71,8 +72,16 @@
             icon="facebook"
             label="Continue with Facebook"
           />
-          <TheSocialMediaButton icon="google" label="Continue with Google" />
-          <TheSocialMediaButton icon="apple" label="Continue with Apple" />
+          <TheSocialMediaButton
+            ultraWideBtn
+            icon="google"
+            label="Continue with Google"
+          />
+          <TheSocialMediaButton
+            ultraWideBtn
+            icon="apple"
+            label="Continue with Apple"
+          />
         </div>
         <div class="form_actions_already_have_account">
           <TheTypography text="Already have an account?" textSize="sm" />
@@ -143,7 +152,9 @@ export default {
   }
 }
 
-.mobile {
+.mobile,
+.tablet,
+.desktop {
   width: 99%;
 
   #content_box {
@@ -154,20 +165,14 @@ export default {
     margin: 0 0 24px 0;
   }
 
-  .form {
-    display: grid;
-    grid-gap: 16px;
-    margin: 0 0 24px 0;
-  }
-
   .form_actions {
     display: grid;
     grid-gap: 24px;
 
     &_information {
       display: grid;
-      grid-template-columns: 1fr 1.3fr 1fr;
       align-items: center;
+
       .line {
         border: 0.5px solid $blue-gray;
         height: 0;
@@ -181,7 +186,6 @@ export default {
     }
 
     &_social_media {
-      width: 100%;
       display: grid;
       grid-gap: 8px;
     }
@@ -193,11 +197,48 @@ export default {
     }
   }
 }
+.mobile {
+  .form {
+    display: grid;
+    grid-gap: 16px;
+    margin: 0 0 24px 0;
+  }
+
+  .form_actions {
+    &_information {
+      grid-template-columns: 1fr 1.3fr 1fr;
+    }
+
+    &_social_media {
+      width: 100%;
+    }
+  }
+}
+
+.tablet {
+  .form {
+    display: grid;
+    grid-gap: 16px;
+    margin: 0 0 24px 0;
+  }
+
+  .form_actions {
+    &_information {
+      grid-template-columns: 1fr 1.3fr 1fr;
+    }
+  }
+}
 
 .desktop {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  .form {
+    display: grid;
+    grid-gap: 16px;
+    margin: 0 0 24px 0;
+  }
 
   #content_box {
     padding: 0 120px;
@@ -205,6 +246,12 @@ export default {
     .header {
       #logo {
         margin: 60px 0 24px 0;
+      }
+    }
+
+    .form_actions {
+      &_information {
+        grid-template-columns: 1fr 1.3fr 1fr;
       }
     }
   }
