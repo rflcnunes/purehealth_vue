@@ -66,6 +66,7 @@ export default {
   align-items: center;
   grid-gap: 8px;
   cursor: pointer;
+  color: dark;
 
   &:hover {
     background-color: $disabled-gray;
