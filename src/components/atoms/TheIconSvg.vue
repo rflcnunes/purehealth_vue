@@ -44,7 +44,7 @@ export default {
   }
 
   img {
-    max-width: 100%;
+    max-width: 70%;
   }
 
   &-sm {
