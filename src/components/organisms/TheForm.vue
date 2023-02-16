@@ -145,12 +145,13 @@ export default {
   },
   methods: {
     submitForm() {
-      const { name, email, password } = this.form;
-      if (name && email && password === "") {
+      const { username, email, password } = this.form;
+      if (username && email && password !== "") {
+        localStorage.setItem("myForm", JSON.stringify(this.form));
+        this.$router.push({ name: "about" });
+      } else {
         this.$toast.error("Please fill in all fields!");
       }
-
-      this.$router.push({ name: "about" });
     },
   },
 };

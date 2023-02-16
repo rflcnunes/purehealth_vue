@@ -2,6 +2,11 @@
   <div class="about">
     <TheTypography
       class="color_text"
+      :text="`Hello, ${name}`"
+      displaySize="sm"
+    />
+    <TheTypography
+      class="color_text"
       text="Thanks for testing!"
       displaySize="sm"
     />
@@ -30,6 +35,22 @@ export default {
   components: {
     TheTypography,
     TheIconSvg,
+  },
+  data() {
+    return {
+      name: "",
+    };
+  },
+  mounted() {
+    this.getNameFromLocalStorage();
+  },
+  methods: {
+    getNameFromLocalStorage() {
+      const myForm = JSON.parse(localStorage.getItem("myForm"));
+      if (myForm) {
+        this.name = myForm.username;
+      }
+    },
   },
 };
 </script>
