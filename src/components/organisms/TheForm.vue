@@ -60,7 +60,7 @@
       <div class="form_actions">
         <TheCheckbox label="I agree with the terms ad privacy" />
         <TheButton
-          @input="$router.push({ name: 'about' })"
+          @input="submitForm()"
           class="ultraWideBtn primary"
           size="lg"
           label="Sign Up"
@@ -142,6 +142,16 @@ export default {
             : (v) => !isNaN(v),
       },
     };
+  },
+  methods: {
+    submitForm() {
+      const { name, email, password } = this.form;
+      if (name && email && password === "") {
+        this.$toast.error("Please fill in all fields!");
+      }
+
+      this.$router.push({ name: "about" });
+    },
   },
 };
 </script>
