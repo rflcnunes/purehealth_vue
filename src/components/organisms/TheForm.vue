@@ -90,7 +90,12 @@
             text="Already have an account?"
             textSize="sm"
           />
-          <TheButton class="textBtn" size="sm" label="Log In" />
+          <TheButton
+            @input="$router.push({ name: 'about' })"
+            class="textBtn"
+            size="sm"
+            label="Log In"
+          />
         </div>
       </div>
     </div>
