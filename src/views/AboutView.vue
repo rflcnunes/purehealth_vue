@@ -49,6 +49,7 @@ export default {
       const myForm = JSON.parse(localStorage.getItem("myForm"));
       if (myForm) {
         this.name = myForm.username;
+        this.$toast.success("Hello, " + this.name);
       }
     },
   },
