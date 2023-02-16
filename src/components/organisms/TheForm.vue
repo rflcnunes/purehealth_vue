@@ -58,12 +58,16 @@
         />
       </div>
       <div class="form_actions">
-        <TheCheckbox label="I agree with the terms ad privacy" />
+        <TheCheckbox
+          @change="form.checkbox = $event"
+          label="I agree with the terms ad privacy"
+        />
         <TheButton
           @input="submitForm()"
           class="ultraWideBtn primary"
           size="lg"
           label="Sign Up"
+          :isDisabled="!submitIsValid"
         />
         <div class="form_actions_information">
           <div class="line"></div>
@@ -123,6 +127,7 @@ export default {
         username: "",
         password: "",
         confirmPassword: "",
+        checkbox: false,
       },
     };
   },
@@ -142,6 +147,21 @@ export default {
             : (v) => !isNaN(v),
       },
     };
+  },
+  computed: {
+    submitIsValid() {
+      const { username, email, password, confirmPassword } = this.form;
+      if (
+        username &&
+        email &&
+        password &&
+        confirmPassword !== "" &&
+        this.form.checkbox
+      ) {
+        return true;
+      }
+      return false;
+    },
   },
   methods: {
     submitForm() {

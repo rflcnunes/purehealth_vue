@@ -46,6 +46,7 @@ export default {
       if (!this.isDisabled) {
         return () => {
           this.checked = !this.checked;
+          this.$emit("change", this.checked);
         };
       }
       return () => {};
