@@ -81,16 +81,19 @@
             class="ultraWideBtn"
             icon="facebook"
             label="Continue with Facebook"
+            @input="$toast('Only for handsome')"
           />
           <TheSocialMediaButton
             class="ultraWideBtn"
             icon="google"
             label="Continue with Google"
+            @input="$toast('This too only for handsome')"
           />
           <TheSocialMediaButton
             class="ultraWideBtn"
             icon="apple"
             label="Continue with Apple"
+            @input="$toast('... for handsome')"
           />
         </div>
         <div class="form_actions_already_have_account">
