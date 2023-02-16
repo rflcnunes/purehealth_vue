@@ -59,7 +59,12 @@
       </div>
       <div class="form_actions">
         <TheCheckbox label="I agree with the terms ad privacy" />
-        <TheButton class="ultraWideBtn primary" size="lg" label="Sign Up" />
+        <TheButton
+          @input="$router.push({ name: 'about' })"
+          class="ultraWideBtn primary"
+          size="lg"
+          label="Sign Up"
+        />
         <div class="form_actions_information">
           <div class="line"></div>
           <div class="description">
@@ -90,12 +95,7 @@
             text="Already have an account?"
             textSize="sm"
           />
-          <TheButton
-            @input="$router.push({ name: 'about' })"
-            class="textBtn"
-            size="sm"
-            label="Log In"
-          />
+          <TheButton class="textBtn" size="sm" label="Log In" />
         </div>
       </div>
     </div>
